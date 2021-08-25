@@ -4,13 +4,38 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="./main.css">
   <title>BlackJack Card Game</title>
 </head>
 <body>
-  <div onload="load()" class="onload__Welcome">
-    Welcome to BlackJack
-    <button class="onload__Welcome-btn"> Start game </button>
-  </div>  
-  <script src="./index.js"></script>
+  
+  <section onload="load()" class="onload" id="onload">
+    <div class="onload__Welcome">
+      Welcome to BlackJack
+      <button class="onload__Welcome-btn"> Start game </button>
+    </div>  
+  </section>
+  
+  <section id="game-area">
+    <div class="game">
+      <div class="game">
+        <h3>BlackJack</h3>
+      <div class="game__body">
+        <div class="game__options">
+          <button class="btn" id="btnStart">Start</button>
+          <button class="btn"> Hit me</button>
+          <button class="btn"> Stay</button>
+        </div>
+        <div class="status"></div>
+        <div class="deck">
+          <div id="deckcount">52</div>
+        </div>
+        <div id="players"></div>
+      </div>
+      <div class="clear"></div>
+      </div>
+    </div>
+  </section>
+    <script src="./index.js"></script>
 </body>
 </html>
