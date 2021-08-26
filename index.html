@@ -8,7 +8,7 @@
   <title>BlackJack Card Game</title>
 </head>
 <body>
-  
+
   <section onload="load()" class="onload" id="onload">
     <div class="onload__Welcome">
       Welcome to BlackJack
@@ -22,15 +22,15 @@
         <h3>BlackJack</h3>
       <div class="game__body">
         <div class="game__options">
-          <button class="btn" id="btnStart">Start</button>
+          <button class="btn" id="btnStart" value="start">Start</button>
           <button class="btn"> Hit me</button>
           <button class="btn"> Stay</button>
         </div>
-        <div class="status"></div>
+        <div class="status" id="status"></div>
         <div class="deck">
           <div id="deckcount">52</div>
         </div>
-        <div id="players"></div>
+        <div id="players" class="players"></div>
       </div>
       <div class="clear"></div>
       </div>

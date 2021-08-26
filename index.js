@@ -52,19 +52,19 @@ const startBlackjackBtn = document.querySelector("#btnStart");
   }
 
   const createPlayersUI = () =>{
-    document.querySelector(".players").innerHTML = "";
+    document.querySelector(".players").innerHTML = " ";
     for (let index = 0; index < players.length; index++) {
       let div_player = document.createElement('div');
       let div_playerid = document.createElement('div');
       let div_hand = document.createElement('div');
       let div_points = document.createElement('div');
       div_points.className = 'points';
-      div_points.id = 'points_' + i;
-      div_player.id = 'player_' + i;
+      div_points.id = 'points_' + index;
+      div_player.id = 'player_' + index;
       div_player.className = 'player';
-      div_hand.id = 'hand_' + i;
+      div_hand.id = 'hand_' + index;
 
-      div_playerid.innerHTML = players[i].ID;
+      div_playerid.innerHTML = players[index].ID;
       div_player.appendChild(div_playerid);
       div_player.appendChild(div_hand);
       div_player.appendChild(div_points);
@@ -74,7 +74,7 @@ const startBlackjackBtn = document.querySelector("#btnStart");
 
 
   startBlackjackBtn.addEventListener("click", () => {
-    document.getElementById('btnStart').value = 'Restart';
+    document.getElementById("btnStart").innerHTML = 'Restart';
     document.getElementById("status").style.display="none";
     // deal 2 cards to every player object
     currentPlayer = 0;
@@ -85,3 +85,5 @@ const startBlackjackBtn = document.querySelector("#btnStart");
     dealHands();
     document.getElementById('player_' + currentPlayer).classList.add('active');
   })
+
+  
