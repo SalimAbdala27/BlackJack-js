@@ -56,9 +56,3 @@ shuffleBtn.addEventListener("click", () => {
   shuffledDeck()
 })
 
-
-startBlackjackBtn.addEventListener("click", () =>{
-  const firstTwo = document.querySelectorAll(".card")
-  document.querySelector(".deck").innerHTML = firstTwo[0] , firstTwo[1]
-  console.log(firstTwo[0],firstTwo[1])
-})
