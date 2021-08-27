@@ -56,3 +56,13 @@ shuffleBtn.addEventListener("click", () => {
   shuffledDeck()
 })
 
+
+startBlackjackBtn.addEventListener("click", () =>{
+  const firstTwo = document.querySelectorAll(".card")
+  document.querySelector(".deck").innerHTML = firstTwo[0].outerHTML +firstTwo[1].outerHTML;
+  document.querySelector(".players").innerHTML = firstTwo[2].outerHTML +firstTwo[3].outerHTML;
+  // const deckValues = parseInt(firstTwo)
+  // // console.log(deckValues[0].value + deckValues[1].value)
+  // console.log(deckValues[0]);
+  console.log(firstTwo[0])
+})

@@ -18,6 +18,22 @@
   width: 100vw;
 }
 
+.players .card {
+  border: solid 1px #aaa;
+  border-radius: 9px;
+  width: 95px;
+  height: 150px;
+  float: left;
+  background-color: white;
+  padding: 3px 3px 3px 3px;
+  margin: 5px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  padding-left: 10px;
+}
+
 .deck .card {
   border: solid 1px #aaa;
   border-radius: 9px;
