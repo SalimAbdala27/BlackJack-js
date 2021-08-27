@@ -17,3 +17,53 @@
   height: 100vh;
   width: 100vw;
 }
+
+.deck .card {
+  border: solid 1px #aaa;
+  border-radius: 9px;
+  width: 95px;
+  height: 150px;
+  float: left;
+  background-color: white;
+  padding: 3px 3px 3px 3px;
+  margin: 5px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  padding-left: 10px;
+}
+
+.value {
+  align-self: flex-start;
+  font-size: 20px;
+}
+
+.card .suit {
+  height: 100px;
+  width: 90px;
+}
+
+.card .Diamonds {
+  background-image: url(./assets/images/diamond.png);
+  background-size: 80px;
+  background-repeat: no-repeat;
+}
+
+.card .Hearts {
+  background-image: url(./assets/images/heart.png);
+  background-size: 80px;
+  background-repeat: no-repeat;
+}
+
+.card .Clubs {
+  background-image: url(./assets/images/clubs.png);
+  background-size: 80px;
+  background-repeat: no-repeat;
+}
+
+.card .Spades {
+  background-image: url(./assets/images/spade.png);
+  background-size: 80px;
+  background-repeat: no-repeat;
+}

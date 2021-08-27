@@ -1,6 +1,6 @@
 const startBtn = document.querySelector(".onload__Welcome-btn");
-
 const startBlackjackBtn = document.querySelector("#btnStart");
+const shuffleBtn = document.querySelector("#shuffle")
 
   startBtn.addEventListener("click", () => {
     document.querySelector(".onload__Welcome").style.display = "none";
@@ -30,9 +30,35 @@ const shuffledDeck = () => {
     deck[random] = temp;
   }
 }
-shuffledDeck();
+
+shuffledDeck()
 // const shuffled = shuffledDeck();
 
-for (let index = 0; index < 10; index++) {
-  console.log(`${deck[index].Value} of ${deck[index].Suit}`)
-}
+// for (let index = 0; index < 10; index++) {
+//   console.log(`${deck[index].Value} of ${deck[index].Suit}`)
+// }
+
+shuffleBtn.addEventListener("click", () => {
+  document.querySelector(".deck").innerHTML = "";
+  for (let index = 0; index < deck.length; index++) {
+    let card = document.createElement("div");
+		let value = document.createElement("div");
+		let suit = document.createElement("div");
+		card.className = "card";
+		value.className = "value";
+		suit.className = "suit " + deck[index].Suit;
+    // suit.innerHTML = deck[index].Suit
+		value.innerHTML = deck[index].Value;
+		card.appendChild(value);
+		card.appendChild(suit);
+    document.querySelector(".deck").appendChild(card);
+  }
+  shuffledDeck()
+})
+
+
+startBlackjackBtn.addEventListener("click", () =>{
+  const firstTwo = document.querySelectorAll(".card")
+  document.querySelector(".deck").innerHTML = firstTwo[0] , firstTwo[1]
+  console.log(firstTwo[0],firstTwo[1])
+})
