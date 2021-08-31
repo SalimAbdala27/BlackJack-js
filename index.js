@@ -1,6 +1,9 @@
 const startBtn = document.querySelector(".onload__Welcome-btn");
 const startBlackjackBtn = document.querySelector("#btnStart");
 const shuffleBtn = document.querySelector("#shuffle")
+const hitMe = document.querySelector("#hitMe")
+const check = document.querySelector("#checkbox")
+const endGame = document.querySelector("#endGame")
 
   startBtn.addEventListener("click", () => {
     document.querySelector(".onload__Welcome").style.display = "none";
@@ -64,5 +67,38 @@ startBlackjackBtn.addEventListener("click", () =>{
   // const deckValues = parseInt(firstTwo)
   // // console.log(deckValues[0].value + deckValues[1].value)
   // console.log(deckValues[0]);
-  console.log(firstTwo[0])
+  // console.log(parseInt(firstTwo.values[0]))
+  
+  
+  for (let index = 0; index < firstTwo.length; index++) {
+    switch(firstTwo[index].children[0].innerHTML){
+      case "J":
+        firstTwo[index].children[0].innerHTML = 10;
+        break
+      case "Q":
+        firstTwo[index].children[0].innerHTML = 10;
+        break
+      case "K":
+        firstTwo[index].children[0].innerHTML = 10;
+        break
+      case "A":
+        firstTwo[index].children[0].innerHTML = 11;
+    }
+  }
+  const addedPlayerOne = parseInt(firstTwo[0].children[0].innerHTML) + parseInt(firstTwo[1].children[0].innerHTML)
+  const addedPlayerTwo = parseInt(firstTwo[2].children[0].innerHTML) + parseInt(firstTwo[3].children[0].innerHTML)
+  // if (firstTwo[0].children[0].innerHTML === "J" || firstTwo[0].children[0].innerHTML === "Q" || firstTwo[0].children[0].innerHTML === "K") {
+  //   firstTwo[0].children[0].innerHTML = 10;
+  // }
+  
+  document.querySelector(".Player1").innerHTML = `Player One = ${addedPlayerOne}`
+  document.querySelector(".Player2").innerHTML = `Player Two = ${addedPlayerTwo}`
+  console.log(addedPlayerOne)
 })
+
+// hitMe.addEventListener("click", () => {
+//   const firstTwo = document.querySelectorAll(".card")
+//   document.querySelector(".deck").innerHTML += firstTwo[5].outerHTML +firstTwo[6].outerHTML;
+// })
+
+
