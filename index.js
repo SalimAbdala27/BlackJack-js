@@ -44,6 +44,7 @@ shuffledDeck()
 // }
 
 shuffleBtn.addEventListener("click", () => {
+  document.querySelector(".deck").classList.remove("testOne");
   document.querySelector(".deck").innerHTML = "";
   for (let index = 0; index < deck.length; index++) {
     let card = document.createElement("div");
@@ -57,12 +58,17 @@ shuffleBtn.addEventListener("click", () => {
 		card.appendChild(value);
 		card.appendChild(suit);
     document.querySelector(".deck").appendChild(card);
+    document.querySelector(".Player1").innerHTML = "";
+    document.querySelector(".Player2").innerHTML = "";
+    document.querySelector(".players").style.display = "none";
   }
   shuffledDeck()
 })
 
 
 startBlackjackBtn.addEventListener("click", () =>{
+  document.querySelector(".deck").classList.add("testOne");
+  document.querySelector(".players").style.display = "flex";
   const firstTwo = document.querySelectorAll(".card")
   document.querySelector(".deck").innerHTML = firstTwo[0].outerHTML +firstTwo[1].outerHTML;
   document.querySelector(".players").innerHTML = firstTwo[2].outerHTML +firstTwo[3].outerHTML;
@@ -108,10 +114,19 @@ endGame.addEventListener("click", () => {
   let grabbedNumberTwo = Player2.match(regex)
   // console.log(parseInt( grabbedNumberTwo.join("")))
   if (21 - parseInt( grabbedNumberOne.join(""))  < 21 - parseInt( grabbedNumberTwo.join(""))) {
+    document.querySelector("#title").innerHTML = "Player 1 WINS"
+    document.querySelector("#title").classList.add("animate__animated");
+    document.querySelector("#title").classList.add("animate__flash");
     console.log("Player 1 wins");
   } else if (21 - parseInt( grabbedNumberTwo.join(""))  < 21 - parseInt( grabbedNumberOne.join(""))) {
+    document.querySelector("#title").innerHTML = "Player 2 WINS"
+    document.querySelector("#title").classList.add("animate__animated");
+    document.querySelector("#title").classList.add("animate__flash");
     console.log("Player 2 wins");
   } else {
+    document.querySelector("#title").innerHTML = "Its a draw"
+    document.querySelector("#title").classList.add("animate__animated");
+    document.querySelector("#title").classList.add("animate__flash");
     console.log("Its a draw")
   }
 })

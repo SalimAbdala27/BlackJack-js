@@ -5,6 +5,10 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="./main.css">
+  <link
+  rel="stylesheet"
+  href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
+/>
   <title>BlackJack Card Game</title>
 </head>
 <body>
@@ -19,7 +23,7 @@
   <section id="game-area">
     <div class="game">
       <div class="game">
-        <h3>BlackJack</h3>
+        <h3 class="win" id="title">BlackJack</h3>
       <div class="game__body">
         <div class="game__options">
           <button class="btn" id="btnStart" value="start">Start</button>
@@ -30,10 +34,10 @@
         </div>
         <div class="status" id="status"></div>
         <div class="Player1"></div>
-        <div class="Player2"></div>
-        <div class="deck">
+        <div class="deck testOne">
           <div id="deckcount">52</div>
         </div>
+        <div class="Player2"></div>
         <div id="players" class="players"></div>
       </div>
       <div class="clear"></div>
