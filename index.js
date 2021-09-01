@@ -4,6 +4,8 @@ const shuffleBtn = document.querySelector("#shuffle")
 const hitMe = document.querySelector("#hitMe")
 const check = document.querySelector("#checkbox")
 const endGame = document.querySelector("#endGame")
+const Player1 = document.querySelector(".Player1")
+const Player2 = document.querySelector(".Player2")
 
   startBtn.addEventListener("click", () => {
     document.querySelector(".onload__Welcome").style.display = "none";
@@ -93,9 +95,28 @@ startBlackjackBtn.addEventListener("click", () =>{
   
   document.querySelector(".Player1").innerHTML = `Player One = ${addedPlayerOne}`
   document.querySelector(".Player2").innerHTML = `Player Two = ${addedPlayerTwo}`
-  console.log(addedPlayerOne)
+  // console.log(addedPlayerOne)
 })
 
+
+endGame.addEventListener("click", () => {
+  let regex  = /[\d]/g;
+  let Player1 = document.querySelector(".Player1").innerHTML;
+  let grabbedNumberOne = Player1.match(regex)
+  // console.log(parseInt( grabbedNumberOne.join("")))
+  let Player2 = document.querySelector(".Player2").innerHTML;
+  let grabbedNumberTwo = Player2.match(regex)
+  // console.log(parseInt( grabbedNumberTwo.join("")))
+  if (21 - parseInt( grabbedNumberOne.join(""))  < 21 - parseInt( grabbedNumberTwo.join(""))) {
+    console.log("Player 1 wins");
+  } else if (21 - parseInt( grabbedNumberTwo.join(""))  < 21 - parseInt( grabbedNumberOne.join(""))) {
+    console.log("Player 2 wins");
+  } else {
+    console.log("Its a draw")
+  }
+})
+
+// 21 - parseInt( grabbedNumberOne.join(""))  < 21 - parseInt( grabbedNumberTwo.join(""))
 // hitMe.addEventListener("click", () => {
 //   const firstTwo = document.querySelectorAll(".card")
 //   document.querySelector(".deck").innerHTML += firstTwo[5].outerHTML +firstTwo[6].outerHTML;
