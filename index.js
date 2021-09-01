@@ -93,10 +93,8 @@ endGame.addEventListener("click", () => {
   let regex  = /[\d]/g;
   let Player1 = document.querySelector(".Player1").innerHTML;
   let grabbedNumberOne = Player1.match(regex)
-  // console.log(parseInt( grabbedNumberOne.join("")))
   let Player2 = document.querySelector(".Player2").innerHTML;
   let grabbedNumberTwo = Player2.match(regex)
-  // console.log(parseInt( grabbedNumberTwo.join("")))
   if (21 - parseInt( grabbedNumberOne.join(""))  < 21 - parseInt( grabbedNumberTwo.join(""))) {
     document.querySelector("#title").innerHTML = "Player 1 WINS"
     document.querySelector("#title").classList.add("animate__animated");
@@ -115,7 +113,6 @@ endGame.addEventListener("click", () => {
   }
 })
 
-// 21 - parseInt( grabbedNumberOne.join(""))  < 21 - parseInt( grabbedNumberTwo.join(""))
 // hitMe.addEventListener("click", () => {
 //   const firstTwo = document.querySelectorAll(".card")
 //   document.querySelector(".deck").innerHTML += firstTwo[5].outerHTML +firstTwo[6].outerHTML;
