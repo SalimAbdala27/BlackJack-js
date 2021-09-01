@@ -24,8 +24,6 @@ const Player2 = document.querySelector(".Player2")
 }
 deckOfCard();
 console.log(deck);
-// console.log(deckOfCard(deck));
-// const unshuffledDeck = deckOfCard(deck);
 
 const shuffledDeck = () => {
   for (let index = 0; index < deck.length - 1; index++) {
@@ -37,11 +35,6 @@ const shuffledDeck = () => {
 }
 
 shuffledDeck()
-// const shuffled = shuffledDeck();
-
-// for (let index = 0; index < 10; index++) {
-//   console.log(`${deck[index].Value} of ${deck[index].Suit}`)
-// }
 
 shuffleBtn.addEventListener("click", () => {
   document.querySelector(".deck").classList.remove("testOne");
@@ -53,7 +46,6 @@ shuffleBtn.addEventListener("click", () => {
 		card.className = "card";
 		value.className = "value";
 		suit.className = "suit " + deck[index].Suit;
-    // suit.innerHTML = deck[index].Suit
 		value.innerHTML = deck[index].Value;
 		card.appendChild(value);
 		card.appendChild(suit);
@@ -72,10 +64,6 @@ startBlackjackBtn.addEventListener("click", () =>{
   const firstTwo = document.querySelectorAll(".card")
   document.querySelector(".deck").innerHTML = firstTwo[0].outerHTML +firstTwo[1].outerHTML;
   document.querySelector(".players").innerHTML = firstTwo[2].outerHTML +firstTwo[3].outerHTML;
-  // const deckValues = parseInt(firstTwo)
-  // // console.log(deckValues[0].value + deckValues[1].value)
-  // console.log(deckValues[0]);
-  // console.log(parseInt(firstTwo.values[0]))
   
   
   for (let index = 0; index < firstTwo.length; index++) {
@@ -95,13 +83,9 @@ startBlackjackBtn.addEventListener("click", () =>{
   }
   const addedPlayerOne = parseInt(firstTwo[0].children[0].innerHTML) + parseInt(firstTwo[1].children[0].innerHTML)
   const addedPlayerTwo = parseInt(firstTwo[2].children[0].innerHTML) + parseInt(firstTwo[3].children[0].innerHTML)
-  // if (firstTwo[0].children[0].innerHTML === "J" || firstTwo[0].children[0].innerHTML === "Q" || firstTwo[0].children[0].innerHTML === "K") {
-  //   firstTwo[0].children[0].innerHTML = 10;
-  // }
   
   document.querySelector(".Player1").innerHTML = `Player One Score : ${addedPlayerOne}`
   document.querySelector(".Player2").innerHTML = `Player Two Score : ${addedPlayerTwo}`
-  // console.log(addedPlayerOne)
 })
 
 
