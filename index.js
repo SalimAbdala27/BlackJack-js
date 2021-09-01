@@ -99,8 +99,8 @@ startBlackjackBtn.addEventListener("click", () =>{
   //   firstTwo[0].children[0].innerHTML = 10;
   // }
   
-  document.querySelector(".Player1").innerHTML = `Player One = ${addedPlayerOne}`
-  document.querySelector(".Player2").innerHTML = `Player Two = ${addedPlayerTwo}`
+  document.querySelector(".Player1").innerHTML = `Player One Score : ${addedPlayerOne}`
+  document.querySelector(".Player2").innerHTML = `Player Two Score : ${addedPlayerTwo}`
   // console.log(addedPlayerOne)
 })
 
