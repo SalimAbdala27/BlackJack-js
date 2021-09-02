@@ -23,7 +23,7 @@ const Player2 = document.querySelector(".Player2")
       deck.push(card)}}
 }
 deckOfCard();
-console.log(deck);
+
 
 const shuffledDeck = () => {
   for (let index = 0; index < deck.length - 1; index++) {
