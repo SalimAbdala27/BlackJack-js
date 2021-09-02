@@ -68,12 +68,13 @@
   text-shadow: 0 0 7px #fff, 0 0 10px #fff, 0 0 21px #fff, 0 0 42px #0fa, 0 0 82px #0fa, 0 0 92px #0fa, 0 0 102px #0fa, 0 0 151px #0fa;
 }
 .onload__Welcome-btn {
-  width: 10vw;
-  height: 5vh;
+  width: 20vw;
+  height: 10vh;
   border-radius: 15px;
-  background: none;
-  color: #EEEEEE;
+  background: black;
+  color: #FFF8E5;
   border: 5px white solid;
+  font-size: 30px;
 }
 .onload__Welcome-btn:hover {
   background: #EEEEEE;
@@ -104,6 +105,14 @@
   height: 40px;
   width: 80px;
   border-radius: 15px;
+  background: none;
+  color: #EEEEEE;
+  border: 5px white solid;
+}
+
+.btn:hover {
+  background: #EEEEEE;
+  color: black;
 }
 
 .players {
@@ -186,4 +195,56 @@
   background-image: url(./assets/images/spade.png);
   background-size: 80px;
   background-repeat: no-repeat;
+}
+
+@media screen and (max-width: 500px) {
+  .onload {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+  }
+  .onload__Welcome {
+    justify-content: unset;
+    align-items: unset;
+    justify-self: flex-start;
+    padding-top: 10px;
+    background-size: cover;
+    font-size: 50px;
+    text-align: center;
+  }
+  .onload__Welcome-btn {
+    margin-top: 250px;
+    justify-content: unset;
+    align-items: unset;
+    justify-self: center;
+    align-self: center;
+    width: 30vw;
+    height: 10vh;
+    border-radius: 15px;
+    background: none;
+    color: #EEEEEE;
+    border: 5px white solid;
+  }
+
+  #game-area {
+    background-size: cover;
+    background-repeat: unset;
+    height: 500vh;
+    width: 100vw;
+    padding: unset;
+  }
+
+  .game h3 {
+    width: 110vw;
+    padding-bottom: 50px;
+  }
+
+  .deck {
+    padding-left: 40px;
+  }
+
+  .players {
+    padding-left: 40px;
+  }
 }
