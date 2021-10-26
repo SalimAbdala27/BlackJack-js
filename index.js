@@ -20,7 +20,8 @@ const Player2 = document.querySelector(".Player2")
   for (let index = 0; index < suits.length; index++) {
     for (let element = 0; element < values.length; element++) {
       let card = {Value: values[element], Suit: suits[index]}
-      deck.push(card)}}
+      deck.push(card)
+    }}
 }
 deckOfCard();
 
@@ -81,11 +82,23 @@ startBlackjackBtn.addEventListener("click", () =>{
         firstTwo[index].children[0].innerHTML = 11;
     }
   }
-  const addedPlayerOne = parseInt(firstTwo[0].children[0].innerHTML) + parseInt(firstTwo[1].children[0].innerHTML)
+  let addedPlayerOne = parseInt(firstTwo[0].children[0].innerHTML) + parseInt(firstTwo[1].children[0].innerHTML);
   const addedPlayerTwo = parseInt(firstTwo[2].children[0].innerHTML) + parseInt(firstTwo[3].children[0].innerHTML)
+  if (addedPlayerOne < 17 && addedPlayerOne <21){
+    document.querySelector(".deck").innerHTML = firstTwo[0].outerHTML +firstTwo[1].outerHTML + firstTwo[4].outerHTML;
+    addedPlayerOne = parseInt(firstTwo[0].children[0].innerHTML) + parseInt(firstTwo[1].children[0].innerHTML) + parseInt(firstTwo[4].children[0].innerHTML);
+    if(addedPlayerOne < 17 && addedPlayerOne <21){
+      document.querySelector(".deck").innerHTML = firstTwo[0].outerHTML +firstTwo[1].outerHTML + firstTwo[4].outerHTML + firstTwo[5].outerHTML;
+      addedPlayerOne = parseInt(firstTwo[0].children[0].innerHTML) + parseInt(firstTwo[1].children[0].innerHTML) + parseInt(firstTwo[4].children[0].innerHTML) + parseInt(firstTwo[5].children[0].innerHTML);
+    }
+    if(addedPlayerOne < 17 && addedPlayerOne <21){
+      document.querySelector(".deck").innerHTML = firstTwo[0].outerHTML +firstTwo[1].outerHTML + firstTwo[4].outerHTML + firstTwo[5].outerHTML + firstTwo[6].outerHTML;
+      addedPlayerOne = parseInt(firstTwo[0].children[0].innerHTML) + parseInt(firstTwo[1].children[0].innerHTML) + parseInt(firstTwo[4].children[0].innerHTML) + parseInt(firstTwo[5].children[0].innerHTML) + parseInt(firstTwo[6].children[0].innerHTML);
+    }
+  }
   
-  document.querySelector(".Player1").innerHTML = `Player One Score : ${addedPlayerOne}`
-  document.querySelector(".Player2").innerHTML = `Player Two Score : ${addedPlayerTwo}`
+  document.querySelector(".Player1").innerHTML = `Dealer's Score : ${addedPlayerOne}`
+  document.querySelector(".Player2").innerHTML = `Your Score : ${addedPlayerTwo}`
 })
 
 
@@ -95,13 +108,23 @@ endGame.addEventListener("click", () => {
   let grabbedNumberOne = Player1.match(regex)
   let Player2 = document.querySelector(".Player2").innerHTML;
   let grabbedNumberTwo = Player2.match(regex)
-  if (21 - parseInt( grabbedNumberOne.join(""))  < 21 - parseInt( grabbedNumberTwo.join(""))) {
-    document.querySelector("#title").innerHTML = "Player 1 WINS"
+  if (parseInt(grabbedNumberOne.join("")) > 21){
+    document.querySelector("#title").innerHTML = "Dealer BUST"
+    document.querySelector("#title").classList.add("animate__animated");
+    document.querySelector("#title").classList.add("animate__flash");
+    console.log(grabbedNumberOne);
+  } else if (parseInt(grabbedNumberTwo.join("")) > 21){
+    document.querySelector("#title").innerHTML = "You BUST"
+    document.querySelector("#title").classList.add("animate__animated");
+    document.querySelector("#title").classList.add("animate__flash");
+    console.log("Player 1 wins");
+  }else if (21 - parseInt( grabbedNumberOne.join(""))  < 21 - parseInt( grabbedNumberTwo.join(""))) {
+    document.querySelector("#title").innerHTML = "Dealer WINS"
     document.querySelector("#title").classList.add("animate__animated");
     document.querySelector("#title").classList.add("animate__flash");
     console.log("Player 1 wins");
   } else if (21 - parseInt( grabbedNumberTwo.join(""))  < 21 - parseInt( grabbedNumberOne.join(""))) {
-    document.querySelector("#title").innerHTML = "Player 2 WINS"
+    document.querySelector("#title").innerHTML = "YOU WIN"
     document.querySelector("#title").classList.add("animate__animated");
     document.querySelector("#title").classList.add("animate__flash");
     console.log("Player 2 wins");
@@ -117,5 +140,3 @@ endGame.addEventListener("click", () => {
 //   const firstTwo = document.querySelectorAll(".card")
 //   document.querySelector(".deck").innerHTML += firstTwo[5].outerHTML +firstTwo[6].outerHTML;
 // })
-
-
